@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <title>Alpha Twelve</title>
+  </head>
+  <body>
+    <!--Sidebar-->
+    <nav>
+      <div class="logo">
+        <img src="images/Logo.png" alt="logo" />
+        <i class="fa-solid fa-bars toggle" aria-label="Toggle sidebar"></i>
+      </div>
+
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+            <a href="#" aria-label="Home" class="navlinks">
+              <i class="fa-solid fa-house"></i>
+              <span class="link-name">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Event" class="navlinks">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span class="link-name">Event</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Speaker" class="navlinks">
+              <i class="fa-solid fa-user"></i>
+              <span class="link-name">Speaker</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Reports" class="navlinks">
+              <i class="fa-solid fa-clipboard-list"></i>
+              <span class="link-name">Reports</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Notification" class="navlinks">
+              <i class="fa-regular fa-bell"></i>
+              <span class="link-name">Notification</span>
+              <span class="notify-number">3</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Message" class="navlinks">
+              <i class="fa-regular fa-comments"></i>
+              <span class="link-name">Message</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Settings" class="navlinks">
+              <i class="fa-solid fa-gear"></i>
+              <span class="link-name">Settings</span>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li class="sidebar-collapse">
+            <a href="#" aria-label="Collapse Sidebar">
+              <i class="fa-solid fa-angles-left sidebar-toggle"></i>
+              <span class="link-name ">Collapse</span>
+            </a>
+          </li>
+
+          <li class="mode">
+            <div class="mode-toggle">
+              <span class="switch"></span>
+            </div>
+            <a href="#" aria-label="Dark mode">
+              <span class="link-name">Dark mode</span>
+            </a>
+          </li>
+
+          <li class="sidebar-collapse">
+            <a href="#" aria-label="User Profile">
+              <i class="fa-solid fa-circle-user profile-icon"></i>
+              <div>
+                <span class="link-name profile-name">Rudra Devi</span>
+              <span class="link-name profile-mail">rudra.devi@gmail.com</span>
+              </div>
+              
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="dashboard-container">
+      <!--Section 1-->
+      <section class="welcome-container">
+        <span class="welcome-text">Welcome! here's your summary</span>
+        <div class="box-container">
+          <div class="box">
+            <div class="box-info">
+              <p class="box-title">Total Events</p>
+            <i class="fa-solid fa-circle-info"></i>
+            </div>
+            
+            <div class="figure-container">
+              <p class="box-text">100,000</p>
+              <i class="fa-solid fa-arrow-trend-up"></i>
+              <span class="uptrend">+5.0%</span>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-info">
+              <p class="box-title">Active Speakers</p>
+            <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <div class="figure-container">
+              <p class="box-text">25</p>
+              <i class="fa-solid fa-arrow-trend-down decline"></i>
+              <span class="downtrend">-5.0%</span>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-info">
+              <p class="box-title">Total Registrations</p>
+            <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <div class="figure-container">
+              <p class="box-text">300</p>
+              <i class="fa-solid fa-arrow-trend-up"></i>
+              <span class="uptrend">+5.0%</span>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-info">
+              <p class="box-title">Total Revenue</p>
+            <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <div class="figure-container">
+              <p class="box-text">$500,000</p>
+              <i class="fa-solid fa-arrow-trend-up"></i>
+              <span class="uptrend">+5.0%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Section 2-->
+      <section class="event-container">
+        <h3 class="event-text">Event Registrations per month</h3>
+
+        <div class="chart-swiper-container">
+          <div class="chart-box">
+            <canvas id="myChart"></canvas>
+          </div>
+          <div class="swiper">
+  <div class="slider">
+    <div class="slide">
+      <img id="slide" src="images/slide.png" alt=""/>
+      <div class="text-overlay">
+        <p>Latest News & Updates</p>
+        <p>Turpis interdum nunc varius ornare dignissim pretium. Massa ornare quis aliquet sed vitae. Sed velit nisi, fermentum erat. Fringilla purus, erat fringilla tincidunt quisque non. Pellentesque in ut tellus.</p></div>
+    </div>
+    <div class="slide">
+      <img id="slide-1" src="images/slide1.png" alt="">
+      <div class="text-overlay">Your Text Here</div>
+    </div>
+    <div class="slide">
+      <img id="slide-2" src="images/slide2.png" alt="">
+      <div class="text-overlay">Your Text Here</div>
+    </div>
+  </div>
+  <div class="slider-nav">
+    <a href="#slide"></a>
+    <a href="#slide1"></a>
+    <a href="#slide2"></a>
+  </div>
+  <button class="arrow left-arrow">&lt;</button>
+  <button class="arrow right-arrow">&gt;</button>
+</div>
+
+        </div>
+      </section>
+
+      <!--Popup menu-->
+      <div id="popupOverlay" class="popup-overlay hidden">
+  <div class="popup-content">
+    <span class="close-popup" onclick="closePopup()">×</span>
+    <div class="popup-header">
+      <h2>Event Name</h2>
+    <p>Event Date</p>
+    </div>
+    <p class="popup-description">Event Description</p>
+
+    <div class="popup-profile">
+      <img src="/images/Image.png" alt=""/>
+      <img src="/images/Image1.png" alt=""/>
+      <img src="/images/Image2.png" alt=""/>
+    </div>
+
+    <div class="popup-para">
+      <p >3 Guest speakers: Speaker name A, Speaker name B, Speaker name C</p>
+    <p>300 Attendees</p>
+    </div>
+
+    <div class="popup-button">
+      <a href="#" class="popup-edit">Edit</a>
+      <div class="popup-button-2">
+        <a href="#" class="popup-delete">Delete</a>
+        <a href="#" class="popup-mark">Mark as completed</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+      <!--Section 3-->
+      <section>
+        <h3 class="event-history">Events History</h3>
+        <div class="history-container">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="searchInput" type="text" placeholder="Search..." />
+          </div>
+
+          <div class="history-toggle" data-filter="date">
+            <span>Date <i class="fa-solid fa-angle-down"></i></span>
+          </div>
+
+          <div class="history-toggle" data-filter="status">
+            <span>Status <i class="fa-solid fa-angle-down"></i></span>
+          </div>
+
+          <div class="history-toggle" data-filter="name">
+            <span>Name <i class="fa-solid fa-angle-down"></i></span>
+          </div>
+
+          <span class="history-left-text">Displaying 100 results</span>
+
+          <div class="history-right-text">
+            <span class="history-text">Sort:</span>
+            <div class="history-toggle-right">
+              <span>Most Recent <i class="fa-solid fa-angle-down"></i></span>
+            </div>
+          </div>
+          <div class="download-more-container">
+            <div class="history-toggle-right history-more">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+
+            <div class="history-toggle-right history-download">
+              <span><i class="fa-solid fa-download"></i> Export</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <section class="table-body">
+            <table>
+              <thead>
+                <tr>
+                  <th>Event Name</th>
+                  <th>Date</th>
+                  <th>Speaker</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!--1-->
+                <tr
+                  class="event-row"
+                  data-name="Cloud Innovation Summit"
+                  data-date="2024-10-15"
+                  data-status="Completed"
+                  onclick="toggleDetails(this)"
+                >
+                  <td class="event-name">
+                    <i class="fa-solid fa-angle-down event-icon"></i> Cloud
+                    Innovation Summit
+                  </td>
+                  <td>2024-10-15</td>
+                  <td>Jane Doe</td>
+                  <td><p class="status complete">Completed</p></td>
+                </tr>
+                <tr class="event-details">
+                  <td colspan="4" class="event-drop">
+                    <div class="date-speaker">
+                      <p>2024-10-15</p>
+                      <p>Jane Doe</p>
+                    </div>
+                  </td>
+                </tr>
+
+                <!--2-->
+                <tr
+                  class="event-row"
+                  data-name="Blockchain Revolution Conference"
+                  data-date="2024-11-05"
+                  data-status="In Progress"
+                  onclick="toggleDetails(this)"
+                >
+                  <td class="event-name">
+                    <i class="fa-solid fa-angle-down event-icon"></i> Blockchain
+                    Revolution Conference
+                  </td>
+                  <td>2024-11-05</td>
+                  <td>Dr. Peter Smith</td>
+                  <td><p class="status progress">In Progress</p></td>
+                </tr>
+                <tr class="event-details">
+                  <td colspan="4" class="event-drop">
+                    <div class="date-speaker">
+                      <p>2024-11-05</p>
+                      <p>Dr. Peter Smith</p>
+                    </div>
+                  </td>
+                </tr>
+
+                <!--3-->
+                <tr
+                  class="event-row"
+                  data-name="AI in Healthcare Symposium"
+                  data-date="2024-12-01"
+                  data-status="Completed"
+                  onclick="toggleDetails(this)"
+                >
+                  <td class="event-name">
+                    <i class="fa-solid fa-angle-down event-icon"></i> AI in Healthcare Symposium
+                  </td>
+                  <td>2024-12-01</td>
+                  <td>Dr. Alsha Malk</td>
+                  <td><p class="status complete">Completed</p></td>
+                </tr>
+                <tr class="event-details">
+                  <td colspan="4" class="event-drop">
+                    <div class="date-speaker">
+                      <p>2024-12-01</p>
+                      <p>Dr. Alsha Malk</p>
+                    </div>
+                  </td>
+                </tr>
+
+                <!--4-->
+                <tr
+                  class="event-row"
+                  data-name="Future of Fintech Forum"
+                  data-date="2024-10-25"
+                  data-status="Completed"
+                  onclick="toggleDetails(this)"
+                >
+                  <td class="event-name">
+                    <i class="fa-solid fa-angle-down event-icon"></i> Future of
+                    Fintech Forum
+                  </td>
+                  <td>2024-10-25</td>
+                  <td>John Lee</td>
+                  <td><p class="status complete">Completed</p></td>
+                </tr>
+                <tr class="event-details">
+                  <td colspan="4" class="event-drop">
+                    <div class="date-speaker">
+                      <p>2024-10-25</p>
+                      <p>John Lee</p>
+                    </div>
+                  </td>
+                </tr>
+
+            
+                  <!-- 5 -->
+                  <tr
+                    class="event-row"
+                    data-name="Data Analytics In Business"
+                    data-date="2024-11-12"
+                    data-status="Completed"
+                    onclick="toggleDetails(this)"
+                  >
+                    <td class="event-name">
+                      <i class="fa-solid fa-angle-down event-icon"></i> Data
+                      Analytics In Business
+                    </td>
+                    <td>2024-11-12</td>
+                    <td>Rachel Moore</td>
+                    <td><p class="status complete">Completed</p></td>
+                  </tr>
+                  <tr class="event-details hidden">
+                    <td colspan="4" class="event-drop">
+                      <div class="date-speaker">
+                        <p>2024-11-12</p>
+                        <p>Rachel Moore</p>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- 6 -->
+                  <tr
+                    class="event-row"
+                    data-name="Sustainable Energy Expo"
+                    data-date="2024-09-28"
+                    data-status="Completed"
+                    onclick="toggleDetails(this)"
+                  >
+                    <td class="event-name">
+                      <i class="fa-solid fa-angle-down event-icon"></i>
+                      Sustainable Energy Expo
+                    </td>
+                    <td>2024-09-28</td>
+                    <td>Prof. Alan Green</td>
+                    <td><p class="status complete">Completed</p></td>
+                  </tr>
+                  <tr class="event-details hidden">
+                    <td colspan="4" class="event-drop">
+                      <div class="date-speaker">
+                        <p>2024-09-28</p>
+                        <p>Prof. Alan Green</p>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- 7 -->
+                  <tr
+                    class="event-row"
+                    data-name="Web3 Interface Workshop"
+                    data-date="2024-11-19"
+                    data-status="In Progress"
+                    onclick="toggleDetails(this)"
+                  >
+                    <td class="event-name">
+                      <i class="fa-solid fa-angle-down event-icon"></i> Web3
+                      Interface Workshop
+                    </td>
+                    <td>2024-11-19</td>
+                    <td>Kevin Adams</td>
+                    <td><p class="status progress">In Progress</p></td>
+                  </tr>
+                  <tr class="event-details hidden">
+                    <td colspan="4" class="event-drop">
+                      <div class="date-speaker">
+                        <p>2024-11-19</p>
+                        <p>Kevin Adams</p>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- 8-->
+                  <tr
+                    class="event-row"
+                    data-name="Cybersecurity for Startups"
+                    data-date="2024-11-19"
+                    data-status="Completed"
+                    onclick="toggleDetails(this)"
+                  >
+                    <td class="event-name">
+                      <i class="fa-solid fa-angle-down event-icon"></i>
+                      Cybersecurity for Startups
+                    </td>
+                    <td>2024-11-19</td>
+                    <td>Emily Zhang</td>
+                    <td><p class="status complete">Completed</p></td>
+                  </tr>
+                  <tr class="event-details hidden">
+                    <td colspan="4" class="event-drop">
+                      <div class="date-speaker">
+                        <p>2024-11-19</p>
+                        <p>Emily Zhang</p>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- 9 -->
+                  <tr
+                    class="event-row"
+                    data-name="Smart Cities Forum"
+                    data-date="2024-10-18"
+                    data-status="In Progress"
+                    onclick="toggleDetails(this)"
+                  >
+                    <td class="event-name">
+                      <i class="fa-solid fa-angle-down event-icon"></i> Smart
+                      Cities Forum
+                    </td>
+                    <td>2024-10-18</td>
+                    <td>Dr. Maria Hernandez</td>
+                    <td><p class="status progress">In Progress</p></td>
+                  </tr>
+                  <tr class="event-details hidden">
+                    <td colspan="4" class="event-drop">
+                      <div class="date-speaker">
+                        <p>2024-10-18</p>
+                        <p>Dr. Maria Hernandez</p>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- 10 -->
+                  <tr
+                    class="event-row"
+                    data-name="Tech Safari Mixer"
+                    data-date="2024-09-30"
+                    data-status="In Progress"
+                    onclick="toggleDetails(this)"
+                  >
+                    <td class="event-name">
+                      <i class="fa-solid fa-angle-down event-icon"></i> Tech
+                      Safari Mixer
+                    </td>
+                    <td>2024-09-30</td>
+                    <td>Guest Panel</td>
+                    <td><p class="status progress">In Progress</p></td>
+                  </tr>
+                  <tr class="event-details hidden">
+                    <td colspan="4" class="event-drop">
+                      <div class="date-speaker">
+                        <p>2024-09-30</p>
+                        <p>Guest Panel</p>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </tbody>
+            </table>
+          </section>
+        </div>
+
+        <div class="page-container">
+          <div class="pagination">
+            <i class="fa-solid fa-angle-left left"></i>
+            <span class="page-number active-page">1</span>
+            <span class="page-number">2</span>
+            <span class="page-number">3</span>
+            <i class="fa-solid fa-angle-right right"></i>
+          </div>
+
+          <div class="sort-container">
+            <span class="sort-label">Sort:</span>
+            <div class="sort-options">
+              <span>10 rows <i class="fa-solid fa-angle-down"></i></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+    <script src="chart.js"></script>
+  </body>
+</html>
